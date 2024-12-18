@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<!-- Define appenders -->
+	<Appenders>
+		<!-- Console Appender -->
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+	</Appenders>
+
+	<!-- Loggers -->
+	<Loggers>
+		<!-- Application-specific logger -->
+		<Logger name="com.qa.glovbox" level="debug" additivity="false">
+			<AppenderRef ref="Console" />
+		</Logger>
+
+		<!-- Suppress logs from libraries -->
+		<Logger name="org.apache" level="error" additivity="false" />
+		<Logger name="org.hibernate" level="error" additivity="false" />
+		<Logger name="org.springframework" level="error" additivity="false" />
+		<Logger name="org.openqa.selenium" level="error" additivity="false" />
+		<Logger name="org.testng.internal" level="error" additivity="false" />
+		<Logger name="org.testng.TestNG" level="error" additivity="false" />
+
+
+		<!-- Root logger -->
+		<Root level="debug">
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>
