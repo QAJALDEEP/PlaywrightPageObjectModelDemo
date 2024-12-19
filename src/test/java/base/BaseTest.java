@@ -28,7 +28,7 @@ public class BaseTest {
 		String browserName = FileConstant.getPropertyValue(FileConstant.getAppConfigFilePath(), "browserName");
 		String baseUrl = FileConstant.getPropertyValue(FileConstant.getAppConfigFilePath(), "baseUrl");
 		page = pc.openBrowser(browserName).navigateTo(baseUrl);
-		logger.info(browserName+ " launched...");
+		logger.info(browserName + " launched...");
 		logger.info("Navigated to " + baseUrl);
 		loginPage = new LoginPage(page);
 	}

@@ -1,6 +1,8 @@
 package playwrightconfig;
 
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Base64;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
@@ -73,6 +75,17 @@ public class PlaywrightConfig {
 		tlBrowserContext.remove();
 		tlbr.remove();
 		tlpw.remove();
+	}
+	
+
+	public static String takeScreenshot() {
+		String path = System.getProperty("user.dir") + "/screenshot/" + System.currentTimeMillis() + ".png";
+		//getPage().screenshot(new Page.ScreenshotOptions().setPath(Paths.get(path)).setFullPage(true));
+		
+		byte[] buffer = getPage().screenshot(new Page.ScreenshotOptions().setPath(Paths.get(path)).setFullPage(true));
+		String base64Path = Base64.getEncoder().encodeToString(buffer);
+		
+		return base64Path;
 	}
 
 }

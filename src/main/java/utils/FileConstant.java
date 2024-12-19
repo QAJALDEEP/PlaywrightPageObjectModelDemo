@@ -8,9 +8,13 @@ import java.util.Properties;
 public class FileConstant {
 
 	private static Properties prop;
+	
+	public static final String ROOT_PATH = System.getProperty("user.dir");
 
-	public static final Path APPCONFIG_PROPERTY_FILE = Paths.get(System.getProperty("user.dir"), "src", "main",
+	public static final Path APPCONFIG_PROPERTY_FILE = Paths.get(ROOT_PATH, "src", "main",
 			"resources", "propertyfiles", "appconfig.properties");
+	
+	
 
 	public static String getAppConfigFilePath() {
 		return APPCONFIG_PROPERTY_FILE.toString();

@@ -1,0 +1,10 @@
+<suite name="MasterSuite" parallel="true">
+<listeners>
+    <listener
+      class-name="extentreportsconfig.ExtentListeners"/>
+  </listeners>
+    <!-- Include other TestNG XML files -->
+    <suite-files>
+        <suite-file path=".\src\test\resources\testrunner\demo.xml" />
+    </suite-files>
+</suite>
